@@ -1,3 +1,21 @@
+# Game Time testing
+
+This project contains branches covering different levels of testing.
+
+* Clone or fork this repo
+* Check out any of the following branches
+* Check out the README for the lesson
+
+
+1. [background](https://github.com/turingschool-examples/game-time-testing-journey/tree/background)
+2. [mocha-syntax](https://github.com/turingschool-examples/game-time-testing-journey/tree/mocha-syntax)
+3. [basic-tests](https://github.com/turingschool-examples/game-time-testing-journey/tree/basic-tests)
+4. [seperating-logic](https://github.com/turingschool-examples/game-time-testing-journey/tree/seperating-logic)
+5. [unit-tests-and-the-dom](https://github.com/turingschool-examples/game-time-testing-journey/tree/unit-tests-and-the-dom)
+6. [sinon](https://github.com/turingschool-examples/game-time-testing-journey/tree/sinon)
+7. [after-gametime](https://github.com/turingschool-examples/game-time-testing-journey/tree/after-gametime)
+
+-----
 # Game Time Starter Kit
 
 To install the dependencies:
