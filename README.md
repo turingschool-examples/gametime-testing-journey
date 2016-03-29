@@ -24,17 +24,17 @@ There are (way) more JavaScript unit testing frameworks - but these are the majo
 
 ### Next Up
 
-2. [mocha-syntax](https://github.com/turingschool-examples/game-time-testing-journey/tree/mocha-syntax)
+2. [mocha-syntax](https://github.com/turingschool-examples/gametime-testing-journey/tree/mocha-syntax)
 
 ----
 
-1. [background](https://github.com/turingschool-examples/game-time-testing-journey/tree/background)
-2. [mocha-syntax](https://github.com/turingschool-examples/game-time-testing-journey/tree/mocha-syntax)
-3. [basic-tests](https://github.com/turingschool-examples/game-time-testing-journey/tree/basic-tests)
-4. [seperating-logic](https://github.com/turingschool-examples/game-time-testing-journey/tree/seperating-logic)
-5. [unit-tests-and-the-dom](https://github.com/turingschool-examples/game-time-testing-journey/tree/unit-tests-and-the-dom)
-6. [sinon](https://github.com/turingschool-examples/game-time-testing-journey/tree/sinon)
-7. [after-gametime](https://github.com/turingschool-examples/game-time-testing-journey/tree/after-gametime)
+1. [background](https://github.com/turingschool-examples/gametime-testing-journey/tree/background)
+2. [mocha-syntax](https://github.com/turingschool-examples/gametime-testing-journey/tree/mocha-syntax)
+3. [basic-tests](https://github.com/turingschool-examples/gametime-testing-journey/tree/basic-tests)
+4. [seperating-logic](https://github.com/turingschool-examples/gametime-testing-journey/tree/seperating-logic)
+5. [unit-tests-and-the-dom](https://github.com/turingschool-examples/gametime-testing-journey/tree/unit-tests-and-the-dom)
+6. [sinon](https://github.com/turingschool-examples/gametime-testing-journey/tree/sinon)
+7. [after-gametime](https://github.com/turingschool-examples/gametime-testing-journey/tree/after-gametime)
 
 -----
 # Game Time Starter Kit
