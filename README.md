@@ -1,107 +1,120 @@
-# Game Time Testing - Basic Mocha Syntax
+# Game Time Testing - Basic Tests
 
-Our GameTime starter kit comes with Mocha already installed and set up. How do I know this?
+We have two different options for running our tests that we don't have yet.
 
-First, look in the `package.json` file:
+- From the terminal: `npm test`
+- And by running the web server `npm start` and visiting the test endpoint `http://localhost:8080/webpack-dev-server/test.html`
 
-```
-  // This includes mocha as a dependency
-  "devDependencies": {
-    // ...
-    "mocha": "^2.2.5",
-    // ...
-  }
-```
+### Trying It Out
 
-```
-  // That last line sets up the npm test command to use mocha
-  "scripts": {
-    "start": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
-    "build": "./node_modules/webpack/bin/webpack.js",
-    "test": "./node_modules/mocha/bin/mocha --compilers js:babel/register"
-  },
-```
+For our game, let's say I want to display a little block on the screen.
 
-Second, check out the `webpack.config.js`
+I'll call this block a `dingus` and set up a test for it.
 
-```
-// The (second to) last line of code sets up our testing entry point using mocha
-entry: {
-  main: "./lib/index.js",
-  test: "mocha!./test/index.js"
-},
+In the test folder, I'll create a `dingus-test.js` file.
+
+I'll require this test file in my `test/index.js` by adding the line `require('./dingus-test.js');`
+
+In my `test/dingus-test.js` I'll add the lines:
+
+```js
+const chai = require('chai');
+const assert = chai.assert;
+
+const Dingus = require('../lib/dingus');
 ```
 
-Before we dig into some exercises, let's look at some basic Mocha syntax.
+Let's walk through what that does:
 
-#### The Interface
-Mocha has different 'interface' systems that allow developers to choose the DSL style.
+* `const` is ES6 - if you're not familiar with ES6, think of it as a much fancier `var`
+* The first & second lines bring in the `chai` assertion library and define `assert` for us so that we can use it.
+* The last line says that we are defining the `Dingus` object in the test as the result of requiring the Dingus file.
 
-* `BDD` will give you an RSpec style of testing syntax, including: `describe()`, `context()`, `it()`, `before()`, `after()`, `beforeEach()`, and `afterEach()`.
-  ```javascript
-  describe('Array', function() {
-  before(function() {
-    // ...
-  });
+I can run the tests now by starting up the server `npm start` and visiting the test.html at http://localhost:8080/webpack-dev-server/test.html
 
-  describe('#indexOf()', function() {
-    context('when not present', function() {
-      it('should not throw an error', function() {
-        (function() {
-          [1,2,3].indexOf(4);
-        }).should.not.throw();
-      });
-      it('should return -1', function() {
-        [1,2,3].indexOf(4).should.equal(-1);
-      });
+But I see a scary error which tells us we don't have a dingus, to paraphrase.
+
+Let's do ahead and create a `lib/dingus.js` file.
+
+So now, I'll use Mocha and Chai to set up my test description and context.
+
+```js
+describe('Dingus', function() {
+  context('with default attributes', function() {
+    // Create a Dingus
+    // Test that it starts with a default x and y coordinates
+    // Test that it starts with a default height and width.  
+  });  
+});
+```
+
+And now, to fill out the tests:
+
+```js
+describe('Dingus', function() {
+  context('with default attributes', function() {
+    var dingus = new Dingus({});
+
+    it('should assign an x coordinate', function() {
+      assert.equal(dingus.x, 0);
     });
-    context('when present', function() {
-      it('should return the index where the element first appears in the array', function() {
-        [1,2,3].indexOf(3).should.equal(2);
-      });
+
+    it('should assign a y coordinate', function() {
+      assert.equal(dingus.y, 0);
+    });
+
+    it('should assign a height', function(){
+      assert.equal(dingus.height, 10);
+    });
+
+    it('should assign a width', function(){
+      assert.equal(dingus.width, 10);
     });
   });
 });
-///example taken from the mochajs.org page
-  ```
-* `TDD` will give you a MiniTest or TestUnit style of testing syntax, including: `suite()`, `test()`, `suiteSetup()`, `suiteTeardown()`, `setup()`, and `teardown()`.
-
-  ```javascript
-  suite('Array', function() {
-  setup(function() {
-    // ...
-  });
-
-  suite('#indexOf()', function() {
-    test('should return -1 when not present', function() {
-      assert.equal(-1, [1,2,3].indexOf(4));
-    });
-  });
-});
-///example taken from the mochajs.org page
-  ```
-  * Mocha also provides `Exports`, `QUnit` and `Require` styles.
-
-The default style that you'll likely see is BDD.
-
-## Assertions and Chai
-
-As we mentioned in the `background` section, Mocha does not have a default assertion library. We can add on our preferred assertion library, such as [Chai](http://chaijs.com/) to add them in.
-
-What this means, is that Mocha provides the framework (the `describe` block, the running of the tests) and Chai provides the syntatic sugar around saying this like `assert.equal` or `.should.equal`.
-
-Chai provides you with different styles of this - including the big ones, `assert`, `expect` and `should`.
-
-Luckily, this is also already included for us in the `package.json`:
-
-```
-    "chai": "^3.2.0",
 ```
 
+More scary errors!
 
-## Next Up - Basic Tests
+I can get rid of the errors and instead see failures by adding the following code to my `lib/dingus.js`
 
-3. [basic-tests](https://github.com/turingschool-examples/game-time-testing-journey/tree/basic-tests)
+```js
+function Dingus(options){
+
+}
+
+module.exports = Dingus;
+```
+
+I can get the tests to pass by adding the following code to my `lib/dingus.js`
+
+```js
+function Dingus(options){
+  this.x = options.x || 0;
+  this.y = options.y || 0;
+  this.height = options.height || 10;
+  this.width = options.width || 10;
+}
+
+module.exports = Dingus;
+```
+
+## Your Turn
+
+Now that we have a default x, y, width and height. Let's test drive creating a `scoot` function on the Dingus prototype.
+
+Here is the psuedo code for what the method should do.
+
+```js
+  // scoot function
+  // scoot makes the dingus move to the right by 1
+```
+
+Create a test and then make it pass!
+
+## Next Up - Separating Logic
+
+4. [seperating-logic](https://github.com/turingschool-examples/game-time-testing-journey/tree/seperating-logic)
 
 ----
 
