@@ -1,17 +1,17 @@
-# Game Time Testing - Sinon
+# Game Time Testing - After GameTime
 
-### WARNING
+GameTime is an interesting project - because everything theoretically happens in the canvas. There is no large framework, we're not in rails, we're just testing JavaScript.
 
-Sinon is super cool but it doesn't play nicely with Webpack (welcome to the world of JS Testing). While the lesson below 'works on my machine' - it doesn't consistently work for everyone.
+So what else do we need to know about JavaScript?
 
-So, with that in mind, we'll teach the lesson from [here](https://github.com/turingschool/lesson_plans/blob/master/ruby_04-apis_and_scalability/testing_javascript-mocks_and_stubs.markdown)
+- [Unit Testing in Rails](https://github.com/turingschool/lesson_plans/blob/master/ruby_04-apis_and_scalability/testing_javascript_in_rails.markdown)
+- [Full Stack Integration Testing With Selenium (in Rails)](https://github.com/turingschool/lesson_plans/blob/master/ruby_04-apis_and_scalability/full_stack_integration_testing_with_selenium.markdown)
+- Full Stack Integration Testing in JS Apps
+  - How you want to do this depends on the app itself. A sample of _some_ frameworks
+    - [Nightwatch JS](http://nightwatchjs.org/)
+    - [Pioneer JS](http://pioneerjs.com/)
 
-Legacy lesson kept below if you want to spend the time to get Sinon up and running for your project.
-
-
-## Next Up - After GameTime
-
-6. [after-gametime](https://github.com/turingschool-examples/gametime-testing-journey/tree/after-gametime)
+## The End!
 
 ----
 
