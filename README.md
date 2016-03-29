@@ -1,11 +1,95 @@
-# Game Time testing
+# Game Time Testing - Basic Mocha Syntax
 
-This project contains branches covering different levels of testing.
+Our GameTime starter kit comes with Mocha already installed and set up. How do I know this?
 
-* Clone or fork this repo
-* Check out any of the following branches
-* Check out the README for the lesson
+First, look in the `package.json` file:
 
+```
+  // This includes mocha as a dependency
+  "devDependencies": {
+    // ...
+    "mocha": "^2.2.5",
+    // ...
+  }
+```
+
+```
+  // That last line sets up the npm test command to use mocha
+  "scripts": {
+    "start": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "build": "./node_modules/webpack/bin/webpack.js",
+    "test": "./node_modules/mocha/bin/mocha --compilers js:babel/register"
+  },
+```
+
+Second, check out the `webpack.config.js`
+
+```
+// The (second to) last line of code sets up our testing entry point using mocha
+entry: {
+  main: "./lib/index.js",
+  test: "mocha!./test/index.js"
+},
+```
+
+Before we dig into some exercises, let's look at some basic Mocha syntax.
+
+#### The Interface
+Mocha has different 'interface' systems that allow developers to choose the DSL style.
+
+* `BDD` will give you an RSpec style of testing syntax, including: `describe()`, `context()`, `it()`, `before()`, `after()`, `beforeEach()`, and `afterEach()`.
+  ```javascript
+  describe('Array', function() {
+  before(function() {
+    // ...
+  });
+
+  describe('#indexOf()', function() {
+    context('when not present', function() {
+      it('should not throw an error', function() {
+        (function() {
+          [1,2,3].indexOf(4);
+        }).should.not.throw();
+      });
+      it('should return -1', function() {
+        [1,2,3].indexOf(4).should.equal(-1);
+      });
+    });
+    context('when present', function() {
+      it('should return the index where the element first appears in the array', function() {
+        [1,2,3].indexOf(3).should.equal(2);
+      });
+    });
+  });
+});
+///example taken from the mochajs.org page
+  ```
+* `TDD` will give you a MiniTest or TestUnit style of testing syntax, including: `suite()`, `test()`, `suiteSetup()`, `suiteTeardown()`, `setup()`, and `teardown()`.
+
+  ```javascript
+  suite('Array', function() {
+  setup(function() {
+    // ...
+  });
+
+  suite('#indexOf()', function() {
+    test('should return -1 when not present', function() {
+      assert.equal(-1, [1,2,3].indexOf(4));
+    });
+  });
+});
+///example taken from the mochajs.org page
+  ```
+  * Mocha also provides `Exports`, `QUnit` and `Require` styles.
+
+The default style that you'll likely see is BDD.
+
+
+## Next Up - Basic Tests
+
+3. [basic-tests](https://github.com/turingschool-examples/game-time-testing-journey/tree/basic-tests)
+
+----
 
 1. [background](https://github.com/turingschool-examples/game-time-testing-journey/tree/background)
 2. [mocha-syntax](https://github.com/turingschool-examples/game-time-testing-journey/tree/mocha-syntax)
