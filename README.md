@@ -84,6 +84,20 @@ Mocha has different 'interface' systems that allow developers to choose the DSL 
 
 The default style that you'll likely see is BDD.
 
+## Assertions and Chai
+
+As we mentioned in the `background` section, Mocha does not have a default assertion library. We can add on our preferred assertion library, such as [Chai](http://chaijs.com/) to add them in.
+
+What this means, is that Mocha provides the framework (the `describe` block, the running of the tests) and Chai provides the syntatic sugar around saying this like `assert.equal` or `.should.equal`.
+
+Chai provides you with different styles of this - including the big ones, `assert`, `expect` and `should`.
+
+Luckily, this is also already included for us in the `package.json`:
+
+```
+    "chai": "^3.2.0",
+```
+
 
 ## Next Up - Basic Tests
 
