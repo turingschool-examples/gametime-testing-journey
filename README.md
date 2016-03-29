@@ -108,7 +108,7 @@ Luckily, this is also already included for us in the `package.json`:
 1. [background](https://github.com/turingschool-examples/gametime-testing-journey/tree/background)
 2. [mocha-syntax](https://github.com/turingschool-examples/gametime-testing-journey/tree/mocha-syntax)
 3. [basic-tests](https://github.com/turingschool-examples/gametime-testing-journey/tree/basic-tests)
-4. [seperating-logic](https://github.com/turingschool-examples/gametime-testing-journey/tree/seperating-logic)
+4. [separating-logic](https://github.com/turingschool-examples/gametime-testing-journey/tree/separating-logic)
 5. [unit-tests-and-the-dom](https://github.com/turingschool-examples/gametime-testing-journey/tree/unit-tests-and-the-dom)
 6. [sinon](https://github.com/turingschool-examples/gametime-testing-journey/tree/sinon)
 7. [after-gametime](https://github.com/turingschool-examples/gametime-testing-journey/tree/after-gametime)
