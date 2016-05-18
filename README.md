@@ -4,11 +4,6 @@
 
 Sinon is super cool but it doesn't play nicely with Webpack (welcome to the world of JS Testing). While the lesson below 'works on my machine' - it doesn't consistently work for everyone.
 
-So, with that in mind, we'll teach the lesson from [here](https://github.com/turingschool/lesson_plans/blob/master/ruby_04-apis_and_scalability/testing_javascript-mocks_and_stubs.markdown)
-
-Legacy lesson kept below if you want to spend the time to get Sinon up and running for your project.
-
-
 ## Next Up - After GameTime
 
 6. [after-gametime](https://github.com/turingschool-examples/gametime-testing-journey/tree/after-gametime)
@@ -102,10 +97,10 @@ This should work for you. If it doesn't, we're sorry, you can read through this 
 Now we want to include Sinon in the `test/dingus_test.js` by including this line of code:
 
 ```js
-  const sinon = require('sinon/pkg/sinon');
+  const sinon = require('sinon');
 ```
 
-Note: This syntax is part of a workaround to get Sinon to work with Webpack. Ordinarily, you would just use `const sinon = require('sinon');`
+Note: You may need to use the following as part of the sinon work around to get Sinon to work with Webpack. `const sinon = require('sinon/pkg/sinon');;`
 
 Let's create a test setup that describes the draw method:
 
@@ -134,13 +129,13 @@ So first, let's set up a spy.
 ```js
 describe('draw()', function() {
   it('should draw itself on the canvas', function(){
-    // Create a canvas
-    var canvas = { fillRect: function(){} };
+    // Create a canvas context
+    var ctx = { fillRect: function(){} };
     // Spy on that canvas
-    var spy = sinon.spy(canvas, "fillRect");
+    var spy = sinon.spy(ctx, "fillRect");
 
     // Create a dingus that is passed the canvas
-    var options = {canvas: canvas, x: 0, y: 0, height: 20, width: 10}
+    var options = {ctx: ctx, x: 0, y: 0, height: 20, width: 10}
 
     var dingus = new Dingus(options);
 
@@ -161,10 +156,10 @@ The entire test will look like this!
 ```js
 describe('draw()', function() {
   it('should draw itself on the canvas', function(){
-    var canvas = { fillRect: function(){} };
-    var spy = sinon.spy(canvas, "fillRect");
+    var ctx = { fillRect: function(){} };
+    var spy = sinon.spy(ctxs, "fillRect");
 
-    var options = {canvas: canvas, x: 0, y: 0, height: 20, width: 10}
+    var options = {ctxs: ctx, x: 0, y: 0, height: 20, width: 10}
 
     var dingus = new Dingus(options);
 
