@@ -4,22 +4,6 @@
 
 Sinon is super cool but it doesn't play nicely with Webpack (welcome to the world of JS Testing). While the lesson below 'works on my machine' - it doesn't consistently work for everyone.
 
-## Next Up - After GameTime
-
-6. [after-gametime](https://github.com/turingschool-examples/gametime-testing-journey/tree/after-gametime)
-
-----
-
-1. [background](https://github.com/turingschool-examples/gametime-testing-journey/tree/background)
-2. [mocha-syntax](https://github.com/turingschool-examples/gametime-testing-journey/tree/mocha-syntax)
-3. [basic-tests](https://github.com/turingschool-examples/gametime-testing-journey/tree/basic-tests)
-4. [separating-logic](https://github.com/turingschool-examples/gametime-testing-journey/tree/separating-logic)
-5. [unit-tests-and-the-dom](https://github.com/turingschool-examples/gametime-testing-journey/tree/unit-tests-and-the-dom)
-6. [sinon](https://github.com/turingschool-examples/gametime-testing-journey/tree/sinon)
-7. [after-gametime](https://github.com/turingschool-examples/gametime-testing-journey/tree/after-gametime)
-
-------
-
 ## Mocking, Spying and Stubbing
 
 We left off last lesson trying to figure out a meaningful way to test our `draw` method on dingus.
@@ -198,6 +182,22 @@ Update `Game` so that it is initialized with a new `dingus`.
 The test drive a method, using Sinon, that calls the dingus draw method.
 
 Bonus: Check out what the `scoot` method does, in the context of drawing...
+
+## Next Up - After GameTime
+
+6. [after-gametime](https://github.com/turingschool-examples/gametime-testing-journey/tree/after-gametime)
+
+----
+
+1. [background](https://github.com/turingschool-examples/gametime-testing-journey/tree/background)
+2. [mocha-syntax](https://github.com/turingschool-examples/gametime-testing-journey/tree/mocha-syntax)
+3. [basic-tests](https://github.com/turingschool-examples/gametime-testing-journey/tree/basic-tests)
+4. [separating-logic](https://github.com/turingschool-examples/gametime-testing-journey/tree/separating-logic)
+5. [unit-tests-and-the-dom](https://github.com/turingschool-examples/gametime-testing-journey/tree/unit-tests-and-the-dom)
+6. [sinon](https://github.com/turingschool-examples/gametime-testing-journey/tree/sinon)
+7. [after-gametime](https://github.com/turingschool-examples/gametime-testing-journey/tree/after-gametime)
+
+------
 
 -----
 # Game Time Starter Kit
