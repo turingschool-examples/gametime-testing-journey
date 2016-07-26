@@ -27,16 +27,43 @@ describe('Dingus', function() {
     });
   });
 
-  context('with assigned attributes', function() {
+  context('with some assigned attributes', function(){
+    it('should allow me to assign specific and otherwise use defaults', function(){
+      // Create a dingus with only a height and width assigned
+      //var dingus = new Dingus(xValue, yValue, heightValue, widthValue);
+      var heightValue = 25;
+      var widthValue = 100;
+      var dingus = new Dingus('', '', heightValue, widthValue);
+      assert.equal(dingus.height, heightValue);
+      assert.equal(dingus.width, widthValue);
+      assert.equal(dingus.x, 5);
+      assert.equal(dingus.y, 5);
+      // test that the height and width are not defaults
+      // test that the x and y are defaults
+    });
+  });
+
+  context('with all assigned attributes', function() {
     var xValue = 57;
-    var dingus = new Dingus(xValue);
-    // Create a Dingus
-      // give it assigned attributes
+    var yValue = 8;
+    var heightValue = 42;
+    var widthValue = 21;
+    var dingus = new Dingus(xValue, yValue, heightValue, widthValue);
 
     it('assigns the xValue passed in as the dingus x', function(){
       assert.equal(dingus.x, xValue);
     });
-    // test that what we pass in equals what is set
-    // if we tell a dingus what it's x is, it doesn't use the default value
+
+    it('assigns the yValue passed in as the dingus y', function(){
+      assert.equal(dingus.y, yValue);
+    });
+
+    it('assigns the heightValue passed in as the dingus height', function(){
+      assert.equal(dingus.height, heightValue);
+    });
+
+    it('assigns the widthValue passed in as the dingus width', function(){
+      assert.equal(dingus.width, widthValue);
+    });
   });
 });
