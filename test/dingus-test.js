@@ -60,4 +60,15 @@ describe('Dingus', function() {
       assert.equal(dingus.width, widthValue);
     });
   });
+
+  describe('scoot()', function(){
+    it('increases the x coordinate by 1', function(){
+      var xValue = 3;
+      var dingus = new Dingus({x: xValue});
+      assert.equal(dingus.x, xValue);
+      dingus.scoot();
+      assert.equal(dingus.x, xValue + 1);
+    });
+    // want the dingus to move to the right by 1 pixel
+  });
 });
