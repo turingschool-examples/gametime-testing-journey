@@ -1,0 +1,1 @@
+require('./dingus-test.js');
