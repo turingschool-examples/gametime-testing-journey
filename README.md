@@ -61,13 +61,13 @@ Go ahead and open the `stub-test.js` file and you'll see tests which define what
 
 We can go ahead and include this test helper in our `dingus-test.js` by adding this line in the test file.
 
-```
+```js
   const stub = require('./support/stub');
 ```
 
 Let's create a test setup that describes the draw method:
 
-```
+```js
 describe('draw', function(){
   it('should call fillRect on the canvas', function() {
 
@@ -76,7 +76,7 @@ describe('draw', function(){
 
 Knowing what we know about mocks, spys and stubs - let's try to psuedo-code out a solution.
 
-```
+```js
 describe('draw', function(){
   it('should call fillRect on the canvas', function() {
     // Create a stubbed canvas context
@@ -88,7 +88,7 @@ describe('draw', function(){
 
 So first, let's set up a spy.
 
-```
+```js
 describe('draw', function(){
   it('should call fillRect on the canvas', function() {
     var context = stub().of("fillRect");
@@ -99,7 +99,7 @@ describe('draw', function(){
 
 Now let's pass that stub with a spy to our dingus
 
-```
+```js
 describe('draw', function(){
   it('should call fillRect on the canvas', function() {
     var context = stub().of("fillRect");
@@ -116,7 +116,7 @@ Now we can make some slightly more meaningful assertions.
 
 Let's verify that fillRect gets called when we draw the dingus.
 
-```
+```js
 describe('draw', function(){
   it('should call fillRect on the canvas', function() {
     var context = stub().of("fillRect");
@@ -129,7 +129,7 @@ describe('draw', function(){
 
 And now we can test to see if fillRect got called with the correct arguments!
 
-```
+```js
 describe('draw', function(){
   it('should call fillRect on the canvas', function() {
     var context = stub().of("fillRect");
