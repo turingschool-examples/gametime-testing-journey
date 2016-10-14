@@ -82,6 +82,7 @@ describe('draw', function(){
     // Create a stubbed canvas context
     // Create a spy for the fillRect function
     // Create a dingus that is passed the canvas
+    // Draw the dingus
     // Verify that draw calls fillRect on the canvas with the correct values
   });
 ```
@@ -93,6 +94,7 @@ describe('draw', function(){
   it('should call fillRect on the canvas', function() {
     var context = stub().of("fillRect");
     // Create a dingus that is passed the canvas
+    // Draw the dingus
     // Verify that draw calls fillRect on the canvas with the correct values
   });
 ```
@@ -105,6 +107,7 @@ describe('draw', function(){
     var context = stub().of("fillRect");
     var options = {ctx: context, x: 0, y: 5, height: 20, width: 10}
     var dingus = new Dingus(options);
+    dingus.draw();
     // Verify that draw calls fillRect on the canvas with the correct values
   });
 ```
@@ -122,6 +125,7 @@ describe('draw', function(){
     var context = stub().of("fillRect");
     var options = {ctx: context, x: 0, y: 5, height: 20, width: 10}
     var dingus = new Dingus(options);
+    dingus.draw();
     assert.equal(context.fillRect.calls.length, 1);
      //with the correct values
   });
@@ -160,7 +164,7 @@ let ctx = canvas.getContext('2d');
 let game = new Game(canvas, ctx);
 
 function animate() {
-  game.draw(game);
+  game.draw();
   requestAnimationFrame(animate);
 }
 
@@ -169,7 +173,7 @@ animate();
 
 Update or create a `Game` so that it is initialized with a new `dingus`.
 
-The test drive a method, using stubbing and spying, that calls the dingus draw method.
+The test drive a method, using stubbing and spying, that calls the game draw method. The `game.draw()` method should clear the canvas, and then move and draw the dingus.
 
 Bonus: Check out what the `scoot` method does, in the context of drawing...
 
